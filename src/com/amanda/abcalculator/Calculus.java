@@ -24,17 +24,16 @@ public class Calculus {
         String p = "";
         String coefficient = "";
         
-        	//for when d/dx(x) is passed.
+        	//For when d/dx(x) is passed.
         if(x.contains("x") && !x.contains("^") && !x.matches(".*[0-9].*")){
             setDerivative(getDerivative().concat("1"));
             return getDerivative();
         }
         
-        //if the expression contains xoth an x and a caret, we need to use the product rule 
+        //x^ product rule decomposition.
         if (x.contains("x") && !x.contains("^")) {
-            //splits the current expression into individual parts...
             arr = Arrays.asList(x.split("x"));
-            //the coefficient is the derivative
+            //Coefficient is derivative.
             setDerivative(getDerivative().concat(arr.get(0)));
         } 
         //if the expression involves a caret, we need to use the power rule

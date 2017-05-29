@@ -18,33 +18,45 @@ public class Function extends Calculus {
 	
 	
 	public String derive(){
-		
-		//cycles through each polynomial
-		for (String entry : function){
-			//Checking for power rule
-				if (entry.contains("x") 
-						&& (!entry.contains("*") 
-						&& !entry.contains("/") 
-						&& !entry.contains("(") 
-						&& !entry.contains(")"))) {
-					//applying power rule to the entry
-					super.applyPowerRule(entry);
-					return Calculus.getDerivative();
+			
+		//loop cycles through each polynomial
+		for (int i=0; i<function.size(); i++){
+			
+			//Derivative of a constant. Constants do not fulfill any of the above if statements.
+				if (!function.get(i).contains("x")){
+					super.applyPowerRule(function.get(i));
+					function.set(i, "0");
 				}
-				//else if (entry.contains("(") && entry.contains(")")){
-					//super.applyChainRule();
-			//	}
-				//else if (){
-				//	postderivation = entry.applyProductRule();
-				//}
-				//else if (){
-				//	postderivation = entry.applyQuotientRule();
-				//}
-				//return postderivation;
-				//} 
-	}
-		//Derivative of a constant. Constants do not fulfill any of the above if statements.
-		return "0";
+			
+			//Checking for power rule
+				if (function.get(i).contains("x") 
+						&& (!function.get(i).contains("*") 
+						&& !function.get(i).contains("/") 
+						&& !function.get(i).contains("(") 
+						&& !function.get(i).contains(")"))) {
+					//applying power rule to element
+					super.applyPowerRule(function.get(i));
+					function.set(i, Calculus.getDerivative());
+					
+				//chain rule
+					
+				//product rule
+					
+				//quotient rule
+	
+				}
+				
+			}
+//returns the modified ArrayList as a string. 
+		StringBuilder myStringBuilder = new StringBuilder();
+		for (String x : function)
+		{
+			//adds entry x to myStringBuilder
+		    myStringBuilder.append(x);
+		    //adds space for readability
+		    myStringBuilder.append(" ");
+		}
+		return myStringBuilder.toString();
 	}
 	
 }
