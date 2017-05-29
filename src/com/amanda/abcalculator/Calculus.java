@@ -13,6 +13,10 @@ public class Calculus {
 		Calculus.derivative = derivative;
 	}
 
+	public static String getZero(){
+		return "0";
+	}
+	
 	protected static String applyPowerRule(String x) {
 		
 		derivative = "";
@@ -25,7 +29,7 @@ public class Calculus {
         String coefficient = "";
         
         	//For when d/dx(x) is passed.
-        if(x.contains("x") && !x.contains("^") && !x.matches(".*[0-9].*")){
+        if(x.contains("x") && !x.contains("^") && !x.matches(".*[0-9].*")) {
             setDerivative(getDerivative().concat("1"));
             return getDerivative();
         }
