@@ -86,18 +86,18 @@ public class Calculus {
                 }
 
             }
-            //turns the strings into integers...
+            //Strings to ints.
             num *= Integer.parseInt(coefficient);
             power = Integer.parseInt(p);
 
-            //now that we have all that is needed, we compute the derivative and save it as a string and return it
+            //Literal power rule.
             String part1 = Integer.toString(num * power);
             String part2 = Integer.toString(power - 1);
 
-            //if the new power of the expression is one, we can omit the exponent
+            //If power is 1, omit.
             if ((power - 1) == 1) {
                 setDerivative(getDerivative().concat(part1 + "x"));
-            //otherwise, we need to inclde the caret and its corresponding exponent
+            //else include carat.
             } else {
                 setDerivative(getDerivative().concat(part1 + "x" + "^" + part2));
             }
@@ -112,7 +112,7 @@ public class Calculus {
 	
 	//public static String applyProductRule(String c){
 		
-	//}
+//	}
 	
 	//public static String applyQuotientRule(String d){
 		
