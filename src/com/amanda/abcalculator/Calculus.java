@@ -106,9 +106,9 @@ public class Calculus {
 
     }
 	
-	public static void applyChainRule(){
+	//public static void applyChainRule(){
 		
-	}
+	//}
 	
 	//public static String applyProductRule(String c){
 		
