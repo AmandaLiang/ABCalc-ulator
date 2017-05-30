@@ -19,11 +19,11 @@ public class Function extends Calculus {
 	
 	public String derive() {
 			
-		//loop cycles through each polynomial
+		//loop cycles through each term.
 		for (int i=0; i<function.size(); i++){
 			
 			//Derivative of a constant. Constants do not fulfill any of the above if statements.
-				if (!function.get(i).contains("x")&& !function.get(i).contains("+")){
+				if (!function.get(i).contains("x")&& !function.get(i).contains("+") && !function.get(i).contains("-")){
 					super.applyPowerRule(function.get(i));
 					function.set(i, Calculus.getZero());
 				}

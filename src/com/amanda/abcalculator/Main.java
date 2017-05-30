@@ -23,6 +23,9 @@ public class Main extends Calculus {
 		String equation = myScanner.next();
     	Function first = new Function(equation);
     
+    	//Readability
+    	System.out.println();
+    	
     		//Initializes String variable derivative as the ~mathematical~ derivative.
     	String postdiff = first.derive();
 		System.out.println("Derivative of "+ equation +" is "+ postdiff);
@@ -43,7 +46,19 @@ public class Main extends Calculus {
 	    }
 	    else {System.out.println("Which simplifies into:");
 	    	System.out.println(postdiff);}
-			//close scanner.
-		myScanner.close();
+	    
+	    //Readability, adds new line
+	    System.out.println();
+	    
+	    System.out.println("Do you have another expression to differentiate? (Y/N)");
+	    if (myScanner.next().equalsIgnoreCase("yes")) {
+	    	
+	    	//Readability, adds new line
+	    	System.out.println();
+	    	main(args);
+	    }
+	    else{
+	    	myScanner.close();
+	    }
 	}
 }
